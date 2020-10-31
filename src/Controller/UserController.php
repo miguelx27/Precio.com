@@ -39,7 +39,7 @@ class UserController extends AbstractController
         $form = $managerUserService->createOrUpdate($request, new UserEvent());
         if (!$form instanceof FormFactoryInterface)
         {
-            return $this->redirectToRoute('list');
+            // return $this->redirectToRoute('list');
         }
         return $this->render('user/create.html.twig', [
             'form' => $form->createView()

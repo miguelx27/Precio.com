@@ -3,20 +3,16 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-<div>
+<div id="createform">
     {{ form_start(form) }}
-        <div class="my-custom-class-for-errors">
-            {{ form_errors(form) }}
-        </div>
-
         <div class="row">
             <div class="col">
-                {{ form_row(form.create_date) }}
+                {{ form_row(form.create_date, {label_attr: {class: 'radio-custom'} }) }}
             </div>
             <div class="col">
-                {{ form_row(form.modify_date) }}
+                {{ form_row(form.modify_date, {label_attr: {class: 'radio-custom'} }) }}
             </div>
         </div>
-    {{ form_end(form, {'render_rest': true}) }}
+    {{ form_end(form, {'render_rest': false}) }}
 </div>
 {% endblock %}

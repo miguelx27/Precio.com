@@ -3,10 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css/app.css')}}">
+        {% endblock %}
     </head>
     <body>
+        {% block header %}
+        <div class="navCustom">
+            <div class="logo-cont">
+                <span class="text weight-900 size-20 "> Precio.com</span>
+            </div>
+        </div>
+        {% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}
+        <div class="footerCustom">
+            <span> Precio.com</span>
+        </div>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

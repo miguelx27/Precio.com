@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "normal";
+  src: url("/assets/fonts/SourceSans/SourceSansPro-Regular.ttf"),
+        url("/assets/fonts/SourceSans/SourceSansPro-Regular.woff")format("woff"),
+        url("/assets/fonts/SourceSans/SourceSansPro-Regular.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bold";
+  src: url("/assets/fonts/SourceSans/SourceSansPro-Bold.ttf"),
+        url("/assets/fonts/SourceSans/SourceSansPro-Bold.woff")format("woff"),
+        url("/assets/fonts/SourceSans/SourceSansPro-Bold.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("/assets/fonts/SourceSans/SourceSansPro-SemiBold.ttf"),
+        url("/assets/fonts/SourceSans/SourceSansPro-SemiBold.woff")format("woff"),
+        url("/assets/fonts/SourceSans/SourceSansPro-SemiBold.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "segoe";
+  src: url("/assets/fonts/Segoe/Segoe UI.ttf"),
+        url("/assets/fonts/Segoe/SegoeUI.woff")format("woff"),
+        url("/assets/fonts/Segoe/SegoeUI.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "segoeBold";
+  src: url("/assets/fonts/Segoe/Segoe UI Bold.ttf"),
+        url("/assets/fonts/Segoe/SegoeUIBold.woff")format("woff"),
+        url("/assets/fonts/Segoe/SegoeUIBold.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

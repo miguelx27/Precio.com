@@ -1,1 +1,205 @@
 @import  '~bootstrap/scss/bootstrap';
+@import  'font';
+
+body {
+    background-color: #fdfdfd;
+    padding-top: 60px;
+    height: calc(100% - 100px);
+}
+html {
+    height: 100%;
+}
+// scroll bar 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBECED;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  outline: 1px solid #fff;
+  border-radius: 47px;
+  border: 1px solid #fff;
+  box-shadow: inset 0px 0px 4px #fff;
+}
+
+// NavBar
+.navCustom{
+    width: 100%;
+    height: 60px;
+    background: #ffffff ;
+    box-shadow: 0 5px 10px 0 rgba(0,64,128,.05);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    margin-left: 10px;
+}
+.logo-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 3px 2px 10px rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+    padding: 5px 15px;
+    background: #f4f9f4;
+}
+//footer
+.footerCustom {
+    width: 100%;
+    height: 100px;
+    min-height: 100px;
+    background: #323232;
+}
+
+// Text Styles
+.text{
+color: #151E26;
+cursor: default;
+    &.family-bold{
+        font-family: bold;
+    }
+    &.semi-bold{
+        font-family: 'semi-bold';
+    }
+    &.segoe{
+        font-family: "segoe";
+    }
+    &.segoeBold{
+        font-family: 'segoeBold';
+    }
+    &.left{
+        text-align: left;
+    }
+    &.rigth{
+        text-align: right;
+    }
+    &.center{
+        text-align: center;
+    }
+    &.bold{
+        font-weight: 600;
+    }
+    &.weight-900{
+        font-weight: 900;
+    }
+    &.big{
+        font-size: 30px;
+    }
+    &.small{
+        font-size: 12px;
+    }
+    &.normal{
+        font-size: 18px;
+    }
+    &.size-9{
+        font-size: 9px;
+    }
+    &.size-10{
+        font-size: 10px;
+    }
+    &.size-12{
+        font-size: 12px;
+    }
+    &.size-11{
+        font-size: 11px;
+    }
+    &.size-14{
+        font-size: 14px;
+    }
+    &.size-16{
+        font-size: 16px;
+    }
+    &.size-18{
+        font-size: 18px;
+    }
+    &.size-19{
+        font-size: 19px;
+    }
+    &.size-20{
+        font-size: 20px;
+    }
+    &.size-21{
+        font-size: 21px;
+    }
+    &.size-22{
+        font-size: 22px;
+    }
+    &.size-23{
+        font-size: 23px;
+    }
+    &.size-24{
+        font-size: 24px;
+    }
+    &.size-25{
+        font-size: 25px;
+    }
+    &.size-36{
+        font-size: 36px;
+    }
+    &.size-45{
+        font-size: 45px;
+    }
+    &.margin-bot-5{
+        margin-bottom: 5px;
+    }
+    &.margin-left-5{
+        margin-left: 5px;
+    }
+    &.margin-right-5{
+        margin-right: 5px;
+    }
+    &.margin-bot-10{
+        margin-bottom: 10px;
+    }
+    &.margin-bot-20{
+        margin-bottom: 20px;
+    }
+    &.margin-bot-30{
+        margin-bottom: 30px;
+    }
+    &.margin-top-10{
+        margin-top: 10px;
+    }
+    &.margin-right-10{
+        margin-right: 10px;
+    }
+    &.margin-negative-bot{
+            margin-bottom: -15px;
+    }
+    &.shadow{
+        text-shadow: 0.5px 1px rgba(0,0,0,0.3);
+    }
+    &.white{
+        color:#fff;
+    }
+    &.black{
+        color:#000;
+    }
+    &.grayLight{
+        color:#9faab7;
+    }
+    &.red{
+        color: red;
+    }
+}
+// crear formulario
+#createform {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        max-width: 500px;
+        background: #f4f3f3;
+        border-radius: 3px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.17);
+        padding: 25px;
+    }
+}

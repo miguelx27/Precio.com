@@ -1,4 +1,3 @@
-import './styles/app.css';
 
 // app.js
 
