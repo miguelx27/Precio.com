@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Precio.com{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/css/app.css')}}">
         {% endblock %}
@@ -11,7 +11,15 @@
         {% block header %}
         <div class="navCustom">
             <div class="logo-cont">
-                <span class="text weight-900 size-20 "> Precio.com</span>
+                <span class="text weight-900 size-20 logo"><i class="fas fa-hand-holding-usd"></i> Precio.com</span>
+            </div>
+            <div class="accesPath">
+                <a href="{{ path('create') }}">
+                    <span class="text size-14 pointer bold center"><i class="far fa-hand-point-right"></i>Acceder evento</span>
+                </a>
+                <a href="{{ path('list') }}">
+                    <span class="text size-14 pointer bold center"> <i class="fas fa-clipboard-list"></i> Lista de evento</span>
+                </a>
             </div>
         </div>
         {% endblock %}
@@ -19,8 +27,19 @@
         {% block footer %}
         <div class="footerCustom">
             <span class="text white weight-500 size-20"> Precio.com</span>
+            <div class="redes">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-google-plus"></i>
+            </div>
+            <div class="politics">
+                <span class="text size-12 white pointer">Políticas de privacidad</span>
+                <span class="text size-12 white pointer">Políticas de la empresa</span>
+            </div>
         </div>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/js/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

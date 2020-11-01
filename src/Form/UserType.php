@@ -13,8 +13,8 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('create_date')
-            ->add('modify_date')
+//            ->add('create_date')
+//            ->add('modify_date')
             ->add('user_ip')
             ->add('user_agent')
             ->add('indicative_country')

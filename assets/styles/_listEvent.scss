@@ -1,0 +1,16 @@
+//list events
+#list-events {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    animation: fade 1s ease-in-out;
+    overflow: auto;
+    .table {
+        background: white;
+        width: 96%;
+        margin-top: 10px;
+        td, th {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+
+// Text Styles
+.text{
+color: #151E26;
+cursor: default;
+    &.family-bold{
+        font-family: bold;
+    }
+    &.semi-bold{
+        font-family: 'semi-bold';
+    }
+    &.segoe{
+        font-family: "segoe";
+    }
+    &.segoeBold{
+        font-family: 'segoeBold';
+    }
+    &.left{
+        text-align: left;
+    }
+    &.rigth{
+        text-align: right;
+    }
+    &.center{
+        text-align: center;
+    }
+    &.bold{
+        font-weight: 600;
+    }
+    &.weight-500{
+        font-weight: 500;
+    }
+    &.weight-900{
+        font-weight: 900;
+    }
+    &.big{
+        font-size: 30px;
+    }
+    &.small{
+        font-size: 12px;
+    }
+    &.normal{
+        font-size: 18px;
+    }
+    &.size-9{
+        font-size: 9px;
+    }
+    &.size-10{
+        font-size: 10px;
+    }
+    &.size-12{
+        font-size: 12px;
+    }
+    &.size-11{
+        font-size: 11px;
+    }
+    &.size-14{
+        font-size: 14px;
+    }
+    &.size-16{
+        font-size: 16px;
+    }
+    &.size-18{
+        font-size: 18px;
+    }
+    &.size-19{
+        font-size: 19px;
+    }
+    &.size-20{
+        font-size: 20px;
+    }
+    &.size-21{
+        font-size: 21px;
+    }
+    &.size-22{
+        font-size: 22px;
+    }
+    &.size-23{
+        font-size: 23px;
+    }
+    &.size-24{
+        font-size: 24px;
+    }
+    &.size-25{
+        font-size: 25px;
+    }
+    &.size-36{
+        font-size: 36px;
+    }
+    &.size-45{
+        font-size: 45px;
+    }
+    &.margin-bot-5{
+        margin-bottom: 5px;
+    }
+    &.margin-left-5{
+        margin-left: 5px;
+    }
+    &.margin-right-5{
+        margin-right: 5px;
+    }
+    &.margin-bot-10{
+        margin-bottom: 10px;
+    }
+    &.margin-bot-20{
+        margin-bottom: 20px;
+    }
+    &.margin-bot-30{
+        margin-bottom: 30px;
+    }
+    &.margin-top-10{
+        margin-top: 10px;
+    }
+    &.margin-right-10{
+        margin-right: 10px;
+    }
+    &.margin-negative-bot{
+            margin-bottom: -15px;
+    }
+    &.shadow{
+        text-shadow: 0.5px 1px rgba(0,0,0,0.3);
+    }
+    &.white{
+        color:#fff;
+    }
+    &.black{
+        color:#000;
+    }
+    &.grayLight{
+        color:#9faab7;
+    }
+    &.red{
+        color: red;
+    }
+    &.ellipsis {
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &.pointer {
+        cursor: pointer;
+    }
+    &.logo {
+        color: white;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+}

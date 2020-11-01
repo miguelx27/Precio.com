@@ -1,38 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Evento{% endblock %}
 
 {% block body %}
 <div id="createform">
     {{ form_start(form) }}
         <div class="input-cont">
-            <div class="flex-1">
-                {{ form_label(form.create_date, 'Fecha de creación*', { 'attr': {'class': 'foo'} }) }}
-                {{ form_widget(form.create_date) }}
-                {{ form_errors(form.create_date) }}
+            <div class="tittle-form">
+                <span class="text bold size-20 white">
+                    {% if app.request.get('_route') == 'create' %}
+                        Acceder a evento
+                    {% else %}
+                        Actualizar
+                    {% endif %}
+                </span>
             </div>
-            <div class="flex-1">
-                {{ form_label(form.modify_date, 'Fecha de modificación') }}
-                {{ form_widget(form.modify_date) }}
-                {{ form_errors(form.modify_date) }}
-            </div>
-            <div class="flex-1">
-                {{ form_label(form.user_ip, 'Ip del usuario*') }}
+            <div class="flex-1 none">
+                {{ form_label(form.user_ip, 'Ip del usuario *') }}
                 {{ form_widget(form.user_ip, { 'attr': {'id': 'ip-user'} }) }}
                 {{ form_errors(form.user_ip) }}
             </div>
-            <div class="flex-1">
-                {{ form_label(form.user_agent, 'Navegador*', { 'attr': {'id': 'user-agent'} }) }}
+            <div class="flex-1 none">
+                {{ form_label(form.user_agent, 'Navegador *', { 'attr': {'id': 'user-agent'} }) }}
                 {{ form_widget(form.user_agent) }}
                 {{ form_errors(form.user_agent) }}
             </div>
             <div class="flex-1">
-                {{ form_label(form.indicative_country, 'Indicativo país*') }}
+                {{ form_label(form.indicative_country, 'Indicativo país *') }}
                 {{ form_widget(form.indicative_country) }}
                 {{ form_errors(form.indicative_country) }}
             </div>
             <div class="flex-1">
-                {{ form_label(form.event_key, 'Codigo de evento*') }}
+                {{ form_label(form.event_key, 'Clave de evento *') }}
                 {{ form_widget(form.event_key) }}
                 {{ form_errors(form.event_key) }}
             </div>
@@ -42,5 +41,48 @@
 </div>
 {% endblock %}
 {% block javascripts %}
-<script src="{{ asset('build/js/setIpSetUserAgent.js')}}"></script>
+<script>
+    // Opera 8.0+
+    let isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+    // Firefox 1.0+
+    let isFirefox = typeof InstallTrigger !== 'undefined';
+
+    // Safari 3.0+ "[object HTMLElementConstructor]"
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+    // Internet Explorer 6-11
+    let isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+    // Edge 20+
+    let isEdge = !isIE && !!window.StyleMedia;
+
+    // Chrome 1 - 79
+    let isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+    let userAgent
+    if (isOpera) {
+        userAgent = 'Opera';
+    } else if (isFirefox) {
+        userAgent = 'FireFox';
+    } else if (isSafari) {
+        userAgent = 'Safari';
+    } else if (isIE) {
+        userAgent = 'Internet explorer';
+    } else if (isEdge) {
+        userAgent = 'Edge';
+    } else if (isChrome) {
+        userAgent = 'Google Chrome';
+    } else {
+        userAgent = 'Desconocido';
+    }
+    document.getElementById("user_user_agent").value = userAgent;
+    let req = new XMLHttpRequest();
+    req.onload = function() {
+        let ip = JSON.parse(req.response).ip;
+        document.getElementById("user_user_ip").value = ip;
+    };
+    req.open("GET", "https://api.ipify.org/?format=json");
+    req.send();
+</script>
 {% endblock %}

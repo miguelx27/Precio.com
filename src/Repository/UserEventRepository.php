@@ -21,9 +21,8 @@ class UserEventRepository extends ServiceEntityRepository
 
     public function searchAllEvents (){
         return $this->getEntityManager()
-//            ->andWhere('UserEvent.create_date <= DATE_ADD(CURRENT_DATE(), -30, day)')
-            ->createQuery('SELECT UserEvent.id, UserEvent.create_date, UserEvent.user_ip, UserEvent.user_agent, UserEvent.indicative_country, UserEvent.event_key
-            FROM App:UserEvent UserEvent
+            ->createQuery('SELECT UserEvent.id, UserEvent.create_date, UserEvent.modify_date, UserEvent.user_ip, UserEvent.user_agent, UserEvent.indicative_country, UserEvent.event_key
+            FROM App:UserEvent UserEvent WHERE DATE_DIFF( CURRENT_DATE (), UserEvent.create_date ) <= 30
             ' )->getResult();
     }
     // /**

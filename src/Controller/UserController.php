@@ -3,23 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\UserEvent;
-use App\Form\UserType;
 use App\Services\Users\ManagerUserService;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/user")
- */
 class UserController extends AbstractController
 {
     /**
-     * @Route("/list", name="list")
+     * @Route("/", name="list")
      */
     public function index(): Response
     {
@@ -38,8 +32,8 @@ class UserController extends AbstractController
      */
     public function create(Request $request, ManagerUserService $managerUserService): Response
     {
-        $form = $managerUserService->createOrUpdate($request, new UserEvent());
-        if ($form instanceof FormFactoryInterface)
+        $form = $managerUserService->create($request, new UserEvent());
+        if ($form == 'create')
         {
             return $this->redirectToRoute('list');
         } else {
@@ -58,8 +52,8 @@ class UserController extends AbstractController
      */
     public function update(Request $request, UserEvent $userEvent, ManagerUserService $managerUserService): Response
     {
-       $form = $managerUserService->createOrUpdate($request, $userEvent);
-       if (!$form instanceof FormFactoryInterface)
+       $form = $managerUserService->update($request, $userEvent);
+       if ($form == 'update')
        {
            return $this->redirectToRoute('list');
        }

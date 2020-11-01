@@ -29,15 +29,30 @@ class ManagerUserService
         $this->form = $form;
     }
 
-    public function createOrUpdate(Request $request, UserEvent $userEvent)
+    public function create(Request $request, UserEvent $userEvent)
     {
         $form = $this->form->create(UserType::class, $userEvent);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $userEvent->setCreateDate(new \DateTime());
             $userEvent = $form->getData();
             $this->entityManager->persist($userEvent);
             $this->entityManager->flush();
-            return $form;
+            return 'create';
+        }
+        return $form;
+    }
+
+    public function update(Request $request, UserEvent $userEvent)
+    {
+        $form = $this->form->create(UserType::class, $userEvent);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $userEvent->setModifyDate(new \DateTime());
+            $userEvent = $form->getData();
+            $this->entityManager->persist($userEvent);
+            $this->entityManager->flush();
+            return 'update';
         }
         return $form;
     }
