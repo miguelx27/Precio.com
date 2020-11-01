@@ -23,8 +23,10 @@ class UserController extends AbstractController
      */
     public function index(): Response
     {
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository(UserEvent::class)->searchAllEvents ();
         return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
+            'events' => $event,
         ]);
     }
 
@@ -37,13 +39,14 @@ class UserController extends AbstractController
     public function create(Request $request, ManagerUserService $managerUserService): Response
     {
         $form = $managerUserService->createOrUpdate($request, new UserEvent());
-        if (!$form instanceof FormFactoryInterface)
+        if ($form instanceof FormFactoryInterface)
         {
-            // return $this->redirectToRoute('list');
+            return $this->redirectToRoute('list');
+        } else {
+            return $this->render('user/create.html.twig', [
+                'form'=>$form->createView()
+            ]);
         }
-        return $this->render('user/create.html.twig', [
-            'form' => $form->createView()
-        ]);
     }
 
     /**

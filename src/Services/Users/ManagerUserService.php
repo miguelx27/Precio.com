@@ -37,7 +37,7 @@ class ManagerUserService
             $userEvent = $form->getData();
             $this->entityManager->persist($userEvent);
             $this->entityManager->flush();
-            return 'updated';
+            return $form;
         }
         return $form;
     }

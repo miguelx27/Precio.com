@@ -19,6 +19,13 @@ class UserEventRepository extends ServiceEntityRepository
         parent::__construct($registry, UserEvent::class);
     }
 
+    public function searchAllEvents (){
+        return $this->getEntityManager()
+//            ->andWhere('UserEvent.create_date <= DATE_ADD(CURRENT_DATE(), -30, day)')
+            ->createQuery('SELECT UserEvent.id, UserEvent.create_date, UserEvent.user_ip, UserEvent.user_agent, UserEvent.indicative_country, UserEvent.event_key
+            FROM App:UserEvent UserEvent
+            ' )->getResult();
+    }
     // /**
     //  * @return UserEvent[] Returns an array of UserEvent objects
     //  */

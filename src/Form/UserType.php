@@ -19,7 +19,7 @@ class UserType extends AbstractType
             ->add('user_agent')
             ->add('indicative_country')
             ->add('event_key')
-            ->add('save', SubmitType::class)
+            ->add('Guardar', SubmitType::class)
         ;
     }
 
